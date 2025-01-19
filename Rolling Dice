@@ -1,0 +1,26 @@
+from itertools import count
+from random import randint
+
+# declaring a variable to handle while loop
+is_enough = True
+# declaring a variable to keep track of dice rolled in one session
+counter = 0
+while is_enough:
+    # getting input from the user and converting into int data type
+    user_input = input("Roll the dice? (y/n): ").lower()
+    if user_input == 'y':
+        counter += 1
+        no_of_dice = int(input("How many dice you want to roll? "))
+        rolls = []
+        for i in range(no_of_dice):
+            rolls.append(randint(1,6))
+        result = f"({', '.join(map(str, rolls))})"
+        print(result)
+        print(f'(Total dice rolled in the session: {counter})')
+    elif user_input == 'n':
+        print(f'(Total dice rolled in the session: {counter})')
+        print("Thanks for playing!")
+        is_enough = False
+    else:
+        print("Invalid Choice!")
+        is_enough = False
