@@ -1,0 +1,26 @@
+# Rock Paper Scissors
+
+to_continue = True
+
+while to_continue:
+    game_list = ['rock','paper','scissors']
+    user_input = input("Rock, Paper, or Scissors? (r/p/s): ").lower()
+    if user_input in ['r', 'p', 's']:
+        your_choice = {'r':'rock','p':'paper','s':'scissors'}[user_input]
+        computer_choice = random.choice(game_list)
+        print("You Chose: " + your_choice)
+        print("Computer Chose: " + computer_choice)
+        if your_choice == computer_choice:
+            print("It's a tie! Both selected same option")
+        elif ((your_choice == 'rock' and computer_choice == 'paper') or
+             (your_choice == 'scissors' and computer_choice == 'paper') or
+             (your_choice == 'paper' and computer_choice == 'rock')):
+             print("You Win")
+        else:
+            print("You Lose")
+    else:
+        print("Invalid Choice. Please select r, p, or s.")
+    play_again = input("Do you want to play again? (y/n): ").lower()
+    if play_again != 'y':
+        to_continue = False
+        print("Thanks for playing")
