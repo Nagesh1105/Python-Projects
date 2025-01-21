@@ -1,0 +1,20 @@
+#Number Guessing Game
+
+# defining a variable to store system number
+system_number = random.randint(1,100)
+
+
+is_correct = True
+while is_correct:
+    user_input = int(input("Guess the Number between 1 and 100: "))
+    if user_input >= 1 and user_input <= 100:
+        if system_number == user_input:
+            print("Congratulations! You guessed the number.")
+            is correct = False
+        elif system_number > user_input:
+            print("Too Low!")
+        else:
+            print("Too High!")
+    else:
+        print("Please enter a Valid Number")
+        print("System Number: " + str(system_number))
